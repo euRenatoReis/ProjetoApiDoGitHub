@@ -42,6 +42,7 @@ async function getUserData(userName) {
     }
 
     const repositoriesResponse = await getRepos(userName)
+   
 
     const eventsResponseCreate = await getEventCreate(userName)
     const eventsResponsePush = await getEventPush(userName)

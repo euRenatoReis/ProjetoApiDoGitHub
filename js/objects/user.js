@@ -9,9 +9,11 @@ const user = {
     followers : '',
     following : '',
     eventsCreate: [],
-    EventsPush:[],
+    EventsPush: [],
     quantidadeForks: '',
     quantidadeEstrelas:'',
+    quantidadeWatchers: '',
+    linguagem: '',
     
     setInfo(gitHubUser){
          this.avatarUrl = gitHubUser.avatar_url
@@ -20,20 +22,22 @@ const user = {
          this.userName = gitHubUser.login
          this.followers = gitHubUser.followers
          this.following = gitHubUser.following
-         this.quantidadeForks = gitHubUser.forks_count
-         this.quantidadeEstrelas = gitHubUser.stars_count
+         
     }
     ,
     setRepositories(repositories){
        this.repositories = repositories
+       this.quantidadeForks = repositories.forks_count
+       this.quantidadeEstrelas = repositories.stargazers_count
+       this.quantidadeWatchers = repositories.watchers_count
     }
     ,
-    setEventsCreate(ref_event){
-       this.eventsCreate = ref_event.type
+    setEventsCreate(CreateEvent){
+       this.eventsCreate = CreateEvent
     }
     ,
-    setEventsPush(commits){
-       this.EventsPush = commits.type
+    setEventsPush(PushEvent){
+       this.EventsPush = PushEvent
     }
  
 }
