@@ -8,8 +8,8 @@ const user = {
     repositories: [],
     followers : '',
     following : '',
-    eventsCreate: [],
-    EventsPush: [],
+    eventsCreate: '',
+    EventsPush: '',
     quantidadeForks: '',
     quantidadeEstrelas:'',
     quantidadeWatchers: '',
@@ -30,15 +30,12 @@ const user = {
        this.quantidadeForks = repositories.forks_count
        this.quantidadeEstrelas = repositories.stargazers_count
        this.quantidadeWatchers = repositories.watchers_count
-    }
-    ,
-    setEventsCreate(repositories){
+       this.linguagem = repositories.language
        this.eventsCreate = repositories.CreateEvent
-    }
-    ,
-    setEventsPush(repositories){
        this.EventsPush = repositories.PushEvent
     }
+   
+   
  
 }
 

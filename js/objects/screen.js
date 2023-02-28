@@ -17,11 +17,13 @@ const screen = {
         let repositoriesItems = "";
         user.repositories.forEach(repo => repositoriesItems +=  
             `<li><a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
-             <p> Numero de Estrelas: ${user.stargazers_count ?? 'Numero De Estrelas Não Encontrado'} </p> 
-             <p> Numero de Forks: ${user.forks_count ?? 'Numero De Forks Não Encontrado'} </p> 
-             <p> Numero de watchers: ${user.watchers_count ?? 'Numero De Watchers Não Encontrado'} </p> 
-             <p> Numero de Eventos Create: ${user.CreateEvent ?? 'Numero de Eventos Do Tipo Create não Encontrado'}</p> 
-             <p> Numero de Eventos Push: ${user.PushEvent ?? 'Numero de Eventos Do Tipo Push não Encontrado'}</p> </li> 
+             <p> Numero de Estrelas: ${repo.stargazers_count ?? 'Numero De Estrelas Não Encontrado'} </p> 
+             <p> Numero de Forks: ${repo.forks_count ?? 'Numero De Forks Não Encontrado'} </p> 
+             <p> Numero de watchers: ${repo.watchers_count ?? 'Numero De Watchers Não Encontrado'} </p> 
+             <p> Numero de Eventos Create: ${repo.CreateEvent ?? 'Numero de Eventos Do Tipo Create não Encontrado'}</p> 
+             <p> Numero de Eventos Push: ${repo.PushEvent ?? 'Numero de Eventos Do Tipo Push não Encontrado'}</p> 
+             <p> A linguagem De Programação: ${repo.language ?? 'Numero de Eventos Do Tipo Push não Encontrado'}</p>
+             </li> 
             `)
 
         if(user.repositories.length > 0){

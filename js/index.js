@@ -42,8 +42,6 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepos(userName)
    
-
-   
     user.setInfo(userResponse)
     
     user.setRepositories(repositoriesResponse)  
@@ -53,5 +51,6 @@ async function getUserData(userName) {
 
    
 }
+
 
 // EVENTOS = https://api.github.com/users/devemdobro/event

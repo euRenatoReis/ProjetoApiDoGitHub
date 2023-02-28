@@ -32,14 +32,14 @@ async function getEventCreate(response) {
     
     const responseEventCreate = response.CreateEvent
 
-    return await responseEventCreate
+    return responseEventCreate
 }
 
 async function getEventPush(response){
 
    
     const responseEventPush = response.PushEvent
-    return  await responseEventPush
+    return  responseEventPush
 }
 
 
