@@ -4,36 +4,44 @@ import { baseUrl, repositoriesQuantity} from "../variables.js";
 async function getRepos(userName) {
     const response = await fetch(`${baseUrl}${userName}/repos?per_page=${repositoriesQuantity}`);
 
+    getStars(response)
+    getForks(response)
+    getWatchers(response)
+    getEventCreate(response)
+    getEventPush(response)
+
     return await response.json();
 }
 
-async function getWatchersStarsFork(forks_count,stargazers_count,watchers_count){
-
-    const quantidadeFork = 0;
-    const quantidadeEstrelas = 0;
-    const quantidadeWatchers = 0;
-
-    response.array.forEach(forks_count => {
-    
-        quantidadeFork++
-
-        return quantidadeFork
-    });
-
-    response.array.forEach(watchers_count=> {
-
-        quantidadeWatchers++
-
-        return quantidadeWatchers
-    })
-
-    response.array.forEach(stargazers_count => {
-
-        quantidadeEstrelas++
-
-        return quantidadeEstrelas
-    })
-
+async function getStars(response){
+   const pegaStars = response.stargazers_count
+  return pegaStars 
 }
 
-export{ getRepos, getWatchersStarsFork }
+async function getForks(response){
+    const pegaForks = response.forks_count
+    return pegaForks
+}
+
+async function getWatchers(response){
+    const pegawatchers = response.watchers_count
+  return pegawatchers
+}
+
+async function getEventCreate(response) {
+    
+    const responseEventCreate = response.CreateEvent
+
+    return await responseEventCreate
+}
+
+async function getEventPush(response){
+
+   
+    const responseEventPush = response.PushEvent
+    return  await responseEventPush
+}
+
+
+
+export{ getRepos }

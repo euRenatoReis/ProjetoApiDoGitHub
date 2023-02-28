@@ -32,11 +32,11 @@ const screen = {
         }
 
         //a partir daqui é só gambiarra
-        let eventsCreateOfProfile = '';
-        repositories.CreateEvent.forEach(event => eventsCreateOfProfile +=
+       /*  let eventsCreateOfProfile = '';
+        repositoriesItems.CreateEvent.forEach(event => eventsCreateOfProfile +=
             `<li><a href='${event.html_url}' target='_blank'> ${event.CreateEvent} </a></li>`)
 
-        if(repositories.CreateEvent.length > 0){
+        if(repositoriesItems.CreateEvent.length > 0){
             this.userProfile.innerHTML += `<div class='events section'>
                                                 <h2> Eventos </h2>
                                                 <ul>${eventsCreateOfProfile}</ul>
@@ -44,15 +44,15 @@ const screen = {
         }                       
         
         let eventsPushOfProfile = '';
-        repositories.PushEvent.forEach(event => eventsPushOfProfile +=
+        repositoriesItems.PushEvent.forEach(event => eventsPushOfProfile +=
             `<li><a href='${event.html_url}' target='_blank'> ${event.PushEvent} </a></li>`)
 
-        if(repositories.PushEvent.length > 0){
+        if(repositoriesItems.PushEvent.length > 0){
             this.userProfile.innerHTML += `<div class='events section'>
                                                 <h2> Eventos </h2>
                                                 <ul>${eventsPushOfProfile}</ul>
                                            </div>`
-        }                       
+        }                        */
 
     },
 

@@ -32,12 +32,12 @@ const user = {
        this.quantidadeWatchers = repositories.watchers_count
     }
     ,
-    setEventsCreate(CreateEvent){
-       this.eventsCreate = CreateEvent
+    setEventsCreate(repositories){
+       this.eventsCreate = repositories.CreateEvent
     }
     ,
-    setEventsPush(PushEvent){
-       this.EventsPush = PushEvent
+    setEventsPush(repositories){
+       this.EventsPush = repositories.PushEvent
     }
  
 }
