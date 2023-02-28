@@ -8,20 +8,20 @@ const screen = {
                                                <img src="${user.avatarUrl}" alt="foto do perfil do usuario"> 
                                                <div class="data"> 
                                                   <h1> ${user.name ?? "Nome de usuario não cadastrado"} </h1>
-                                                  <p>  ${user.bio  ??  "Bio não cadastrada"} </p><br>
-                                                  <p> Seguidores: ${user.followers ?? 'Numero De Seguidores Não Encontrado'} </p> <br>
-                                                  <p> Seguindo: ${user.following ?? 'Numero De Pessoas que Segue Não Encontrado'} </p> <br>                                              
+                                                  <p>  ${user.bio  ??  "Bio não cadastrada"} </p>
+                                                  <p> Seguidores: ${user.followers ?? 'Numero De Seguidores Não Encontrado'} </p> 
+                                                  <p> Seguindo: ${user.following ?? 'Numero De Pessoas que Segue Não Encontrado'} </p>                                               
                                                </div> 
                                            </div>`;
 
         let repositoriesItems = "";
         user.repositories.forEach(repo => repositoriesItems +=  
-            `<li><a href="${repo.html_url}" target="_blank"> ${repo.name} </a></li>
-             <p> Numero de Estrelas: ${user.stargazers_count ?? 'Numero De Estrelas Não Encontrado'} </p> <br>
-             <p> Numero de Forks: ${user.forks_count ?? 'Numero De Forks Não Encontrado'} </p> <br>
-             <p> Numero de watchers: ${user.watchers_count ?? 'Numero De Watchers Não Encontrado'} </p> <br>
-             <p> Numero de Eventos Create: ${user.CreateEvent ?? 'Numero de Eventos Do Tipo Create não Encontrado'}</p> <br>
-             <p> Numero de Eventos Push: ${user.PushEvent ?? 'Numero de Eventos Do Tipo Push não Encontrado'}</p>  <br>
+            `<li><a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
+             <p> Numero de Estrelas: ${user.stargazers_count ?? 'Numero De Estrelas Não Encontrado'} </p> 
+             <p> Numero de Forks: ${user.forks_count ?? 'Numero De Forks Não Encontrado'} </p> 
+             <p> Numero de watchers: ${user.watchers_count ?? 'Numero De Watchers Não Encontrado'} </p> 
+             <p> Numero de Eventos Create: ${user.CreateEvent ?? 'Numero de Eventos Do Tipo Create não Encontrado'}</p> 
+             <p> Numero de Eventos Push: ${user.PushEvent ?? 'Numero de Eventos Do Tipo Push não Encontrado'}</p> </li> 
             `)
 
         if(user.repositories.length > 0){
