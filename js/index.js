@@ -3,6 +3,7 @@ import { getUser } from "./services/user.js";
 import { getRepos } from "./services/repositories.js";
 import {user} from "./objects/user.js"
 import { screen } from "./objects/screen.js";
+import {getEventCreate, getEventPush} from "./services/events.js";
 
 document.getElementById("btn-search").addEventListener('click', () => {
     const userName = document.getElementById('input-search').value;
@@ -42,15 +43,32 @@ async function getUserData(userName) {
 
     const repositoriesResponse = await getRepos(userName)
    
+    const eventsCreateResponse = await getEventCreate(userName)
+    const eventsPushResponse = await getEventPush(userName)
+
     user.setInfo(userResponse)
     
-    user.setRepositories(repositoriesResponse)  
+    user.setRepositories(repositoriesResponse)
+    
+    user.setCreateEvents(eventsCreateResponse)
+    user.setPushEvents(eventsPushResponse)
 
-   
     screen.renderUser(user)
-
    
 }
 
 
+export{getUserData}
+
 // EVENTOS = https://api.github.com/users/devemdobro/event
+
+
+// Ajustar Nomes de variaveis e arquivos
+
+// testar para ver se algumas partes do codigo 
+
+// Remover comentarios
+
+// perguntar para ver se deveria ficar igual ao enunciado do exercicio
+
+// perguntar se é preciso mostrar todas as linguagens

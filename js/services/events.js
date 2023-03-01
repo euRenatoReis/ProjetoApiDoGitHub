@@ -1,21 +1,27 @@
-import { baseUrl} from "../variables.js";
+import { baseUrl } from "../variables.js";
+
+
 
 async function getEventCreate(userName) {
-    /* const response = await fetch(`${baseUrl}${userName}/events?per_page=${repositoriesQuantity}`); */
-    //const responseEventCreate = await fetch (`${baseUrl}/users/:username/events?event_type=create&per_page=10`)
-    const responseEventCreate = await fetch (`${baseUrl}${userName}/events?&per_page=10`)
+    const responseEventCreate = await fetch(`https://api.github.com/users${userName}event`);
 
-    return await responseEventCreate.json() 
+
+    await fetch(responseEventCreate)
+        .then(response => response.json())
+        .then(data => {
+           
+            const createEvents = data.filter(event => event.type === 'Create');
+            
+            return createEvents
+        })
+
+
+    return await createEvents
 }
 
-async function getEventPush(userName){
-
-    //const responseEventPush = await fetch(`${baseUrl}/users/:username/events?event_type=Push&per_page=10`)
-    const responseEventPush = await fetch (`${baseUrl}${userName}/events?&per_page=10`)
-    return  await responseEventPush.json()
+async function getEventPush(userName) {
+    const responseEventPush = await fetch(`${baseUrl}${userName}event?type='push'`);
+    return await responseEventPush.json()
 }
 
-
-
-
-export{ getEventCreate, getEventPush }
+export { getEventCreate, getEventPush } 

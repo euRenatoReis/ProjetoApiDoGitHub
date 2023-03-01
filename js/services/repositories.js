@@ -1,47 +1,31 @@
 
-import { baseUrl, repositoriesQuantity} from "../variables.js";
+import { baseUrl, repositoriesQuantity } from "../variables.js";
 
 async function getRepos(userName) {
-    const response = await fetch(`${baseUrl}${userName}/repos?per_page=${repositoriesQuantity}`);
+  const response = await fetch(`${baseUrl}${userName}/repos?per_page=${repositoriesQuantity}`);
 
-    getStars(response)
-    getForks(response)
-    getWatchers(response)
-    getEventCreate(response)
-    getEventPush(response)
+  getStars(response)
+  getForks(response)
+  getWatchers(response)
+ 
 
-    return await response.json();
+  return await response.json();
 }
 
-async function getStars(response){
-   const pegaStars = response.stargazers_count
-  return pegaStars 
+async function getStars(response) {
+  const pegaStars = response.stargazers_count
+  return pegaStars
 }
 
-async function getForks(response){
-    const pegaForks = response.forks_count
-    return pegaForks
+async function getForks(response) {
+  const pegaForks = response.forks_count
+  return pegaForks
 }
 
-async function getWatchers(response){
-    const pegawatchers = response.watchers_count
+async function getWatchers(response) {
+  const pegawatchers = response.watchers_count
   return pegawatchers
 }
 
-async function getEventCreate(response) {
-    
-    const responseEventCreate = response.CreateEvent
 
-    return responseEventCreate
-}
-
-async function getEventPush(response){
-
-   
-    const responseEventPush = response.PushEvent
-    return  responseEventPush
-}
-
-
-
-export{ getRepos }
+export { getRepos }
