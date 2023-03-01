@@ -34,7 +34,7 @@ const screen = {
         //evento create
 
         let eventsCreateOfProfile = '';
-          user.repositories.forEach(event => eventsCreateOfProfile +=
+          user.repositories.event.forEach(event => eventsCreateOfProfile +=
             `<li><a href='${event.html_url}' target='_blank'> ${event.name} </a>
                <p> Numero de Eventos Create: ${repo.create ?? 'Numero de Eventos Do Tipo Create não Encontrado'}</p>
             </li>`)

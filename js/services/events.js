@@ -3,20 +3,21 @@ import { baseUrl } from "../variables.js";
 
 
 async function getEventCreate(userName) {
-    const responseEventCreate = await fetch(`https://api.github.com/users${userName}event`);
+    const pegandoEventCreate = await fetch(`${baseUrl}${userName}event`);
+    const responseEventCreate = await pegandoEventCreate.json();
+    const eventosCreate = []
 
 
-    await fetch(responseEventCreate)
-        .then(response => response.json())
-        .then(data => {
-           
-            const createEvents = data.filter(event => event.type === 'Create');
-            
-            return createEvents
-        })
+   await responseEventCreate.forEach(event => {
+        
+        const createEvents = data.filter(event => event.type === 'Create');
 
+         eventosCreate = [createEvents]
 
-    return await createEvents
+        return eventosCreate
+    });
+
+    
 }
 
 async function getEventPush(userName) {
