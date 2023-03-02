@@ -31,19 +31,18 @@ const user = {
        this.quantidadeEstrelas = repositories.stargazers_count
        this.quantidadeWatchers = repositories.watchers_count
        this.linguagem = repositories.language
-       
-       this.EventsPush = repositories.push
-    }
-    ,
-    setCreateEvents(gitHubUser){
- 
-      this.eventsCreate = gitHubUser.create
       
     }
     ,
-    setPushEvents(gitHubUser){
+    setCreateEvents(repositories){
  
-      this.eventsCreate = gitHubUser.push
+      this.eventsCreate = repositories.CreateEvent
+      
+    }
+    ,
+    setPushEvents(repositories){
+ 
+      this.eventsPush = repositories.PushEvent
       
     }
 

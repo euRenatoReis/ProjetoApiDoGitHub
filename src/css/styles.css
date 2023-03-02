@@ -132,7 +132,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
+
 
 .container .profile-data .repositories ul li a{
   padding: 20px;
@@ -146,6 +148,15 @@ main {
 .container .profile-data .repositories ul li a:hover{
   background-color:hotpink;
   color: #fff
+}
+
+.container .profile-data .repositories ul li .detalhes-repositorio{
+
+   display: flex;
+   justify-content: center;
+   border: black 5px;
+   border-radius: 10px;
+
 }
 
 .container .profile-data.hide{
