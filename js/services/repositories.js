@@ -35,7 +35,18 @@ async function getEventCreate(response) {
 
 async function getEventPush(response) {
   const pegapush = response.PushEvent
-  return pegapush
+
+  /* let pushEvents = [];
+
+  // Percorra o array de eventos e verifique o tipo de cada evento
+  for (let i = 0; i < events.length; i++) {
+    if (pegapush[i].type === "PushEvent") {
+      // Se o evento for do tipo PushEvent, adicione-o ao novo array
+      pushEvents.push(pegapush[i]);
+    }
+  } */
+
+  return pushEvents
 }
 
 

@@ -39,20 +39,20 @@ const screen = {
         let eventsCreateOfProfile = '';
         user.eventsCreate.forEach(event => {
 
-            const nomeEvento = event.repo.name
+            const nomeEventoCreate = eventsCreate.repo.name
 
             eventsCreateOfProfile +=
 
                 `<li><a href='${eventsCreate.html_url}' target='_blank'> ${eventsCreate.name} </a>
 
-               <p>Eventos Create: ${nomeEvento ?? 'Eventos Do Tipo Create não Encontrado'}</p>
+               <p>Eventos Create: ${nomeEventoCreate ?? 'Eventos Do Tipo Create não Encontrado'}</p>
 
             </li>`;
 
             if (event.type === "CreateEvent") {
-                const pegaNome = event.payload.commits[0].message;
+                const pegaNomeCreate = event.payload.commits[0].message;
 
-                eventsCreateOfProfile += `<li>${nomeEvento} <span> ${pegaNome} </span> </li>`
+                eventsCreateOfProfile += `<li>${nomeEventoCreate} <span> ${pegaNomeCreate} </span> </li>`
             }
 
         })
@@ -70,20 +70,20 @@ const screen = {
         let eventsPushOfProfile = '';
         user.eventsPush.forEach(event => {
 
-            const nomeEvento = event.repo.name
+            const nomeEventoPush = eventsPush.repo.name
 
             eventsPushOfProfile +=
 
                 `<li><a href='${eventsPush.html_url}' target='_blank'> ${eventsPush.name} </a>
 
-               <p>Eventos Create: ${nomeEvento ?? 'Eventos Do Tipo Create não Encontrado'}</p>
+                     <p>Eventos Create: ${nomeEventoPush ?? 'Eventos Do Tipo Create não Encontrado'}</p>
 
-            </li>`;
+                 </li>`;
 
             if (event.type === "CreateEvent") {
-                const pegaNome = event.payload.description;
+                const pegaNomePush = event.payload.description;
 
-                eventsCreateOfProfile += `<li>${nomeEvento} <span> ${pegaNome} </span> </li>`
+                eventsPushOfProfile += `<li>${nomeEventoPush} <span> ${pegaNomePush} </span> </li>`
             }
 
         })

@@ -34,16 +34,16 @@ const user = {
       
     }
     ,
-    setCreateEvents(repositories){
+    setCreateEvents(events){
  
-      this.eventsCreate = repositories.CreateEvent
+      this.eventsCreate = events.CreateEvent
       
     }
     ,
-    setPushEvents(repositories){
+    setPushEvents(events){
  
-      this.eventsPush = repositories.PushEvent
-      
+      this.eventsPush = events.PushEvent
+    
     }
 
 }
