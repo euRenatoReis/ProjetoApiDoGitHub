@@ -8,8 +8,7 @@ const user = {
     repositories: [],
     followers : '',
     following : '',
-    eventsCreate: [],
-    EventsPush: [],
+    events: [],
     quantidadeForks: '',
     quantidadeEstrelas:'',
     quantidadeWatchers: '',
@@ -34,17 +33,12 @@ const user = {
       
     }
     ,
-    setCreateEvents(events){
+    setEvents(event){
  
-      this.eventsCreate = events.CreateEvent
+      this.events = event
       
     }
-    ,
-    setPushEvents(events){
- 
-      this.eventsPush = events.PushEvent
     
-    }
 
 }
 

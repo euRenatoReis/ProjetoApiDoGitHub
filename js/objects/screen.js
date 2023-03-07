@@ -34,66 +34,29 @@ const screen = {
                                            </div> `
         }
 
-        //evento create
+        //eventos
 
-        let eventsCreateOfProfile = '';
-        user.eventsCreate.forEach(event => {
+        let eventsItems = ""
+        user.events.forEach(event => {
+            const eventName = event.repo.name
 
-            const nomeEventoCreate = eventsCreate.repo.name
+            eventsItems += `<li>${eventName}</li>`
 
-            eventsCreateOfProfile +=
-
-                `<li><a href='${eventsCreate.html_url}' target='_blank'> ${eventsCreate.name} </a>
-
-               <p>Eventos Create: ${nomeEventoCreate ?? 'Eventos Do Tipo Create não Encontrado'}</p>
-
-            </li>`;
-
-            if (event.type === "CreateEvent") {
-                const pegaNomeCreate = event.payload.commits[0].message;
-
-                eventsCreateOfProfile += `<li>${nomeEventoCreate} <span> ${pegaNomeCreate} </span> </li>`
+            if (event.type === 'PushEvent') {
+                const eventMessage = event.payload.commits[0].message
+                eventsItems += `<li>${eventName} <span>- ${eventMessage}</span></li>`
             }
 
         })
 
-        if (user.eventsCreate.length > 0) {
-            this.userProfile.innerHTML += `<div class='events section'>
-                                                <h2> Eventos do Tipo Create </h2>
-                                                <ul>${eventsCreateOfProfile}</ul>
-                                           </div>`
+        if (user.events.length > 0) {
+            this.userProfile.innerHTML += `<div class="events">
+                                            <h2>Eventos</h2>
+                                            <ul>${eventsItems}</ul>
+                                          </div>`
         }
+        
 
-
-        //evento push
-
-        let eventsPushOfProfile = '';
-        user.eventsPush.forEach(event => {
-
-            const nomeEventoPush = eventsPush.repo.name
-
-            eventsPushOfProfile +=
-
-                `<li><a href='${eventsPush.html_url}' target='_blank'> ${eventsPush.name} </a>
-
-                     <p>Eventos Create: ${nomeEventoPush ?? 'Eventos Do Tipo Create não Encontrado'}</p>
-
-                 </li>`;
-
-            if (event.type === "CreateEvent") {
-                const pegaNomePush = event.payload.description;
-
-                eventsPushOfProfile += `<li>${nomeEventoPush} <span> ${pegaNomePush} </span> </li>`
-            }
-
-        })
-
-        if (user.eventsCreate.length > 0) {
-            this.userProfile.innerHTML += `<div class='events section'>
-                                                <h2> Eventos do Tipo Create </h2>
-                                                <ul>${eventsPushOfProfile}</ul>
-                                           </div>`
-        }
     },
 
 
