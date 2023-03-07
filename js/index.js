@@ -55,19 +55,3 @@ async function getUserData(userName) {
     screen.renderUser(user)
    
 }
-
-
-
-
-// EVENTOS = https://api.github.com/users/octocat/received_events
-
-
-// Ajustar Nomes de variaveis e arquivos
-
-// testar para ver se algumas partes do codigo 
-
-// Remover comentarios
-
-// perguntar para ver se deveria ficar igual ao enunciado do exercicio
-
-// perguntar se é preciso mostrar todas as linguagens

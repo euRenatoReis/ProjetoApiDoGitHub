@@ -34,8 +34,6 @@ const screen = {
                                            </div> `
         }
 
-        //eventos
-
         let eventsItems = ""
         user.events.forEach(event => {
             const eventName = event.repo.name
@@ -44,7 +42,7 @@ const screen = {
 
             if (event.type === 'PushEvent') {
                 const eventMessage = event.payload.commits[0].message
-                eventsItems += `<li>${eventName} <span>- ${eventMessage}</span></li>`
+                eventsItems += `<li>${eventName} <span> ${eventMessage}</span></li>`
             }
 
         })
@@ -56,9 +54,7 @@ const screen = {
                                           </div>`
         }
         
-
     },
-
 
     renderNotFound() {
         this.userProfile.innerHTML = "<h3>Usuario não encontrado</h3>"

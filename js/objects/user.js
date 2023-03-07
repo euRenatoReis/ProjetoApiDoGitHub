@@ -38,9 +38,6 @@ const user = {
       this.events = event
       
     }
-    
-
 }
-
 
 export { user }

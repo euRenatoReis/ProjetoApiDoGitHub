@@ -24,6 +24,13 @@ main {
   padding: 50px 0 0;      
 }
 
+span{
+
+  font-weight: bold;
+
+}
+
+
 .devicon-github-original{
   font-size: 60px;
   margin-bottom: 30px;
@@ -121,7 +128,7 @@ main {
   line-height: 23px;
 }
 
-/* REPOSITORIES */
+
 
 .container .profile-data .repositories h2{
   margin-bottom: 30px;
